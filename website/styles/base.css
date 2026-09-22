@@ -1,0 +1,162 @@
+@layer base {
+  :root {
+    color-scheme: dark;
+    --fallback-background: 20, 18, 23;
+    --fallback-on-background: 236, 229, 236;
+    --fallback-surface: 25, 22, 28;
+    --fallback-on-surface: 236, 229, 236;
+    --fallback-on-surface-variant: 201, 192, 202;
+    --fallback-outline: 77, 71, 79;
+    --fallback-primary: 215, 187, 255;
+    --fallback-on-primary: 59, 29, 88;
+    --fallback-primary-container: 84, 52, 116;
+    --fallback-on-primary-container: 239, 221, 255;
+    --fallback-secondary: 206, 194, 210;
+    --fallback-on-secondary: 48, 43, 51;
+    --fallback-secondary-container: 79, 70, 85;
+    --fallback-on-secondary-container: 238, 224, 242;
+    --fallback-tertiary: 255, 181, 193;
+    --fallback-error: 255, 180, 171;
+    --fallback-on-error: 105, 0, 5;
+    --page-width: 1060px;
+    --reading-width: 720px;
+    --toc-width: 220px;
+    --article-gap: 68px;
+    --article-frame: calc(var(--reading-width) + var(--toc-width) + var(--article-gap));
+    --site-wallpaper: none;
+    --site-wallpaper-position: 50% 50%;
+    --bg-image-opacity: 0.48;
+    --bg-image-filter: saturate(0.78) contrast(0.92) brightness(0.84);
+    --scrim-top: color-mix(in srgb, rgb(var(--ref-color-background, var(--fallback-background))) 21%, transparent);
+    --scrim-mid: color-mix(in srgb, rgb(var(--ref-color-background, var(--fallback-background))) 56%, transparent);
+    --scrim-bottom: color-mix(in srgb, rgb(var(--ref-color-background, var(--fallback-background))) 84%, transparent);
+    --header-bg: color-mix(in srgb, rgb(var(--ref-color-background, var(--fallback-background))) 50%, transparent);
+    --font-display: Iowan Old Style, "Palatino Linotype", "Book Antiqua", "Noto Serif SC", Georgia, serif;
+    --font-body: "Noto Sans SC", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  html[data-theme="light"] {
+    color-scheme: light;
+    --bg-image-opacity: 0.46;
+    --bg-image-filter: saturate(0.6) contrast(0.86) brightness(1.06);
+    --scrim-top: color-mix(in srgb, white 24%, transparent);
+    --scrim-mid: color-mix(in srgb, rgb(var(--ref-color-background, 247, 243, 248)) 49%, transparent);
+    --scrim-bottom: color-mix(in srgb, rgb(var(--ref-color-background, 247, 243, 248)) 75%, transparent);
+    --header-bg: color-mix(in srgb, rgb(var(--ref-color-background, 247, 243, 248)) 48%, transparent);
+  }
+
+  body.dark {
+    --scrim-top: color-mix(in srgb, rgb(var(--ref-color-background, var(--fallback-background))) 21%, transparent);
+    --scrim-mid: color-mix(in srgb, rgb(var(--ref-color-background, var(--fallback-background))) 56%, transparent);
+    --scrim-bottom: color-mix(in srgb, rgb(var(--ref-color-background, var(--fallback-background))) 84%, transparent);
+    --header-bg: color-mix(in srgb, rgb(var(--ref-color-background, var(--fallback-background))) 50%, transparent);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 100%;
+    min-height: 100%;
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background: rgb(var(--ref-color-background, var(--fallback-background)));
+    @apply scrollbar-thin scrollbar-track-transparent;
+  }
+
+  body {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: clip;
+    color: rgb(var(--ref-color-on-background, var(--fallback-on-background)));
+    background: rgb(var(--ref-color-background, var(--fallback-background)));
+    font-family: var(--font-body);
+    line-height: 1.68;
+    letter-spacing: -0.01em;
+    transition: color 280ms ease, background-color 280ms ease;
+  }
+
+  body::before,
+  body::after {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+  }
+
+  body::before {
+    z-index: 0;
+    background-image: var(--site-wallpaper);
+    background-position: var(--site-wallpaper-position, center);
+    background-size: cover;
+    opacity: var(--bg-image-opacity);
+    filter: var(--bg-image-filter);
+    transform: scale(1.025);
+    transition: opacity 280ms ease, filter 280ms ease;
+  }
+
+  body::after {
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      var(--scrim-top) 0%,
+      var(--scrim-mid) 31%,
+      var(--scrim-bottom) 78%,
+      rgb(var(--ref-color-background, var(--fallback-background))) 100%
+    );
+    transition: background 280ms ease;
+  }
+
+  body > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button,
+  input {
+    color: inherit;
+    font: inherit;
+  }
+
+  button {
+    border: 0;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  ::selection {
+    color: rgb(var(--ref-color-on-primary, var(--fallback-on-primary)));
+    background: rgb(var(--ref-color-primary, var(--fallback-primary)));
+  }
+
+  :focus-visible {
+    outline: 3px solid color-mix(in srgb, rgb(var(--ref-color-primary, var(--fallback-primary))) 72%, white 12%);
+    outline-offset: 3px;
+  }
+
+  .no-transition * {
+    transition-property: none !important;
+    animation-duration: 0.001ms !important;
+  }
+
+  @media (max-width: 700px) {
+    html {
+      font-size: 100%;
+    }
+  }
+}

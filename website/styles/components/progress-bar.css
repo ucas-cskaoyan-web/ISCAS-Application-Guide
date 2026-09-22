@@ -1,0 +1,34 @@
+@layer components {
+  .progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 110;
+    width: 100%;
+    height: 3px;
+    pointer-events: none;
+  }
+
+  .progress-bar-active,
+  .progress-bar-inactive,
+  .progress-bar-reading {
+    height: 100%;
+    background: rgb(var(--ref-color-primary, var(--fallback-primary)));
+    transition: width 400ms ease-out;
+  }
+
+  .progress-bar-active {
+    width: 100%;
+  }
+
+  .progress-bar-inactive {
+    width: 0;
+    transition-duration: 100ms;
+  }
+
+  .progress-bar-reading {
+    width: 0;
+    transition: width 120ms linear;
+  }
+
+}

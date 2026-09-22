@@ -1,0 +1,32 @@
+/* Custom utility classes */
+@utility text-page-title {
+  font-size: 2.0rem;
+}
+
+@utility text-article-list-item-title {
+  font-size: 1.15rem;
+}
+
+@utility text-markdown-h1 {
+  font-size: 1.8rem;
+}
+
+@utility text-normal {
+  font-size: 1rem;
+}
+
+@utility text-small {
+  font-size: 0.9rem;
+}
+
+@utility text-extra-small {
+  font-size: 0.8rem;
+}
+
+@utility text-site-title {
+  font-size: 1.25rem;
+}
+
+@utility max-w-content {
+  max-width: 1200px;
+}

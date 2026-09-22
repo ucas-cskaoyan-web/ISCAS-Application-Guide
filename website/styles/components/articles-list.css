@@ -1,0 +1,30 @@
+@layer components {
+  .articles-list-container {
+    transition: opacity 400ms ease-in-out;
+  }
+
+  .articles-list-visible {
+    opacity: 1;
+  }
+
+  .articles-list-hidden {
+    opacity: 0;
+  }
+
+  .articles-list-empty {
+    display: grid;
+    min-height: 180px;
+    place-items: center;
+    padding: 40px 20px;
+    border: 1px dashed color-mix(in srgb, rgb(var(--ref-color-outline, var(--fallback-outline))) 50%, transparent);
+    border-radius: 18px;
+    color: rgb(var(--ref-color-on-surface-variant, var(--fallback-on-surface-variant)));
+    background: color-mix(in srgb, rgb(var(--ref-color-surface, var(--fallback-surface))) 24%, transparent);
+  }
+
+  .articles-list-empty-text {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+  }
+}

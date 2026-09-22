@@ -1,0 +1,73 @@
+/* Import Tailwind's base styles, components and utilities */
+@import 'tailwindcss';
+@import '../target/material-theme.css';
+
+/* Source configuration for content scanning */
+@source '../src/**/*.rs';
+@source '../index.html';
+
+/* Tailwind CSS 4 Configuration */
+@theme {
+  /* Custom max-width for content area */
+  --max-width-content: 1200px;
+
+  /* Custom font families */
+  --font-sans: "JetBrains Mono", "Noto Sans SC", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "WenQuanYi Micro Hei", sans-serif;
+  --font-mono: "JetBrains Mono", "Noto Sans SC", "Cascadia Code", Consolas, "Microsoft YaHei", "Courier New", monospace;
+
+  /* Custom font sizes */
+  --font-size-page-title: 2.0rem;
+  --font-size-article-list-item-title: 1.15rem;
+  --font-size-markdown-h1: 1.8rem;
+  --font-size-normal: 1rem;
+  --font-size-small: 0.9rem;
+  --font-size-extra-small: 0.8rem;
+  --font-size-site-title: 1.25rem;
+
+  /* Custom breakpoints */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+
+  /* Custom animations */
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+  --animate-overlay-fade-in: overlay-fade-in 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-overlay-fade-out: overlay-fade-out 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-in-from-right: slide-in-from-right 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-out-to-right: slide-out-to-right 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-spin: spin 1s linear infinite;
+}
+
+/* Import custom modules */
+@import './utilities.css';
+@import './animations.css';
+@import './base.css';
+@import './layout.css';
+@import './syntax-highlighting.css';
+
+/* Import component styles */
+@import "./fonts/material-symbols-outlined.css";
+@import './components/navbar.css';
+@import './components/theme-toggle.css';
+@import './components/progress-bar.css';
+@import './components/error-page.css';
+@import './components/home.css';
+@import './components/directives.css';
+@import './components/articles-list.css';
+@import './components/articles-title.css';
+@import './components/articles-pagination.css';
+@import './components/article-card.css';
+@import './components/article-page.css';
+@import './components/footer.css';
+
+/* Import custom plugins */
+@plugin "./plugins/material-colors.mjs";
+
+/* Configure typography plugin */
+@plugin "@tailwindcss/typography";
+@config "./tailwind.config.js";
+
+/* Configure scrollbar plugin */
+@plugin 'tailwind-scrollbar';
+
+/* Custom variant for dark mode */
+@variant dark (&:where(.dark, .dark *));

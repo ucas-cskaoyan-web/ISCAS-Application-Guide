@@ -7,12 +7,16 @@ docs_src/
 
 # 本地专用构建脚本（仅本地使用，不随仓库分发）
 build-site.ps1
+!legacy/mkdocs-site/build-site.ps1
 
 # Python 缓存
 __pycache__/
 
 # Codex 仓库指引
 AGENTS.md
+
+# 本地 AI 编辑器配置
+.claude/
 
 # Cloudflare Worker 计数器（本地维护，部署时手动粘贴到 Cloudflare，不随仓库分发）
 worker/

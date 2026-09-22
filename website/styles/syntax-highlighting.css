@@ -1,0 +1,67 @@
+@layer utilities {
+  /* Syntax highlighting styles for highlight.js.
+    These styles are scoped to pre tags within .markdown-body.
+  */
+  .hljs-comment,
+  .hljs-quote {
+    @apply text-outline italic;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-subst,
+  .hljs-type,
+  .hljs-class {
+    @apply text-primary font-bold;
+  }
+
+  .hljs-string,
+  .hljs-regexp,
+  .hljs-literal {
+    @apply text-tertiary;
+  }
+
+  .hljs-title,
+  .hljs-section,
+  .hljs-name {
+    @apply text-secondary;
+  }
+
+  .hljs-variable,
+  .hljs-template-variable {
+    @apply text-on-surface-variant;
+  }
+
+  .hljs-attr,
+  .hljs-attribute,
+  .hljs-selector-id,
+  .hljs-number {
+    @apply text-on-tertiary-container;
+  }
+
+  .hljs-symbol,
+  .hljs-bullet {
+    @apply text-secondary-container;
+  }
+
+  .hljs-built_in,
+  .hljs-builtin-name {
+    @apply text-tertiary;
+  }
+
+  .hljs-addition {
+    @apply bg-primary-container;
+  }
+
+  .hljs-deletion {
+    @apply bg-error;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
+  }
+}

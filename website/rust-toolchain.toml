@@ -1,0 +1,6 @@
+[toolchain]
+channel = "nightly"
+targets = [
+    "wasm32-unknown-unknown",
+]
+components = ["clippy", "llvm-tools-preview", "miri", "rust-src", "rustfmt"]

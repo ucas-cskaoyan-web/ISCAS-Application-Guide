@@ -1,0 +1,129 @@
+@layer components {
+  .pagination-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 34px;
+    transition: opacity 400ms ease-in-out;
+  }
+
+  .pagination-visible {
+    opacity: 1;
+  }
+
+  .pagination-hidden {
+    opacity: 0;
+  }
+
+  .pagination-button {
+    min-width: 38px;
+    min-height: 36px;
+    padding: 0 11px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font: 0.78rem var(--font-mono);
+    transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+  }
+
+  .pagination-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .pagination-button-active {
+    border-color: rgb(var(--ref-color-primary, var(--fallback-primary)));
+    color: rgb(var(--ref-color-on-primary, var(--fallback-on-primary)));
+    background: rgb(var(--ref-color-primary, var(--fallback-primary)));
+  }
+
+  .pagination-button-inactive {
+    border-color: color-mix(in srgb, rgb(var(--ref-color-outline, var(--fallback-outline))) 56%, transparent);
+    color: rgb(var(--ref-color-on-surface, var(--fallback-on-surface)));
+    background: color-mix(in srgb, rgb(var(--ref-color-surface, var(--fallback-surface))) 35%, transparent);
+  }
+
+  .pagination-button-inactive:hover {
+    border-color: rgb(var(--ref-color-primary, var(--fallback-primary)));
+    color: rgb(var(--ref-color-on-primary-container, var(--fallback-on-primary-container)));
+    background: rgb(var(--ref-color-primary-container, var(--fallback-primary-container)));
+  }
+
+  .pagination-info {
+    width: 100%;
+    margin-top: 7px;
+    color: rgb(var(--ref-color-on-surface-variant, var(--fallback-on-surface-variant)));
+    font: 0.72rem var(--font-mono);
+    text-align: center;
+  }
+
+  .pagination-dropdown-container {
+    position: relative;
+  }
+
+  .pagination-dropdown {
+    position: absolute;
+    z-index: 60;
+    top: calc(100% + 7px);
+    left: 50%;
+    max-height: calc(100vh - 200px);
+    transform: translateX(-50%);
+  }
+
+  .pagination-dropdown-overlay {
+    position: fixed;
+    z-index: 50;
+    inset: 0;
+    background: transparent;
+  }
+
+  .pagination-dropdown-content {
+    position: relative;
+    z-index: 60;
+    min-width: 130px;
+    max-height: 180px;
+    overflow-y: auto;
+    border: 1px solid color-mix(in srgb, rgb(var(--ref-color-outline, var(--fallback-outline))) 64%, transparent);
+    border-radius: 12px;
+    background: rgb(var(--ref-color-surface-container, var(--fallback-surface)));
+    box-shadow: 0 14px 32px rgb(0 0 0 / 24%);
+    transform-origin: top;
+    animation: dropdown-show 300ms ease-out forwards;
+  }
+
+  .pagination-dropdown-content.hiding {
+    animation: dropdown-hide 200ms ease-in forwards;
+  }
+
+  .pagination-dropdown-item {
+    display: flex;
+    width: 100%;
+    min-height: 40px;
+    align-items: center;
+    padding: 8px 15px;
+    border: 0;
+    color: rgb(var(--ref-color-on-surface, var(--fallback-on-surface)));
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.82rem;
+    text-align: left;
+    transition: color 160ms ease, background-color 160ms ease;
+  }
+
+  .pagination-dropdown-item:hover {
+    color: rgb(var(--ref-color-on-primary-container, var(--fallback-on-primary-container)));
+    background: rgb(var(--ref-color-primary-container, var(--fallback-primary-container)));
+  }
+
+  @media (max-width: 700px) {
+    .pagination-container {
+      margin-top: 27px;
+    }
+
+    .pagination-dropdown-content {
+      min-width: 110px;
+      max-height: 130px;
+    }
+  }
+}

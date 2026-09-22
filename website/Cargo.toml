@@ -1,0 +1,51 @@
+[package]
+name = "iscas-guide"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+leptos = { version = "0.8.2", features = ["csr"] }
+leptos_router = { version = "0.8.2" }
+leptos_meta = { version = "0.8.2" }
+pulldown-cmark = { version = "0.13.0" }
+gloo-timers = { version = "0.3.0", features = ["futures"] }
+web-sys = { version = "0.3.77", features = [
+    "MediaQueryList",
+    "Element",
+    "HtmlElement",
+    "HtmlBodyElement",
+    "HtmlImageElement",
+    "HtmlInputElement",
+    "CssStyleDeclaration",
+    "DomTokenList",
+    "Event",
+    "EventTarget",
+    "Window",
+    "Document",
+    "DomRect",
+    "Storage",
+    "Url",
+    "UrlSearchParams",
+    "ScrollToOptions",
+    "ScrollBehavior",
+] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde-wasm-bindgen = "0.6.5"
+serde-json-wasm = "1.0.1"
+csv = "1.3.1"
+wasm-bindgen = "0.2.100"
+wasm-bindgen-futures = "0.4.50"
+once_cell = "1.21.3"
+gloo-net = { version = "0.6.0", features = ["futures-io"] }
+lazy_static = "1.5.0"
+katex-wasmbind = "0.10.0"
+log = "0.4.27"
+wasm-logger = "0.2.0"
+web-time = "1.1.0"
+zstd = { version = "0.13.3", features = ["wasm"] }
+console_error_panic_hook = "0.1.7"
+
+[profile.release]
+lto = true
+opt-level = 'z'
+codegen-units = 1

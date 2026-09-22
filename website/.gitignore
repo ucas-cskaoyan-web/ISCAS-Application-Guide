@@ -1,0 +1,8 @@
+/.idea
+/.direnv
+/target
+/dist
+/node_modules
+/.ci-tools
+
+**/**/.DS_Store

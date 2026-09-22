@@ -1,0 +1,123 @@
+# 中科院软件所（ISCAS）考研报考指南 - 静态网站配置
+#
+# 说明：MkDocs 要求内容位于配置文件子目录，因此通过构建脚本将仓库
+# 内容同步到 docs_src/（临时构建源，不入库），再交给 MkDocs 构建。
+# 仓库里的 markdown 仍是唯一内容源。
+#
+# 构建:   bash build-site.sh （Cloudflare Pages 的构建命令即此脚本）
+# 部署:   Cloudflare Pages，git push 后自动构建发布
+
+site_name: 中科院软件所（ISCAS）考研报考指南
+site_description: 中国科学院软件研究所考研报考指南、复试攻略与上岸经验分享
+# 部署在 Cloudflare Pages（免费，URL 为 项目名.pages.dev）
+site_url: https://iscas-application-guide.pages.dev/
+repo_url: https://github.com/ucas-cskaoyan-web/ISCAS-Application-Guide
+copyright: 公益维护，非盈利，与软件所无关联 · 内容仅供参考，以官方为准 · <a href="https://iscas-application-guide.pages.dev/免责声明/">免责声明</a> · CC BY-NC-SA 4.0
+
+# 部署新站后填写新版站点地址；为空时旧站不显示回链。
+extra:
+  new_site_url: ""
+
+docs_dir: docs_src
+site_dir: site
+
+theme:
+  name: material
+  language: zh
+  # 禁用 Google Fonts 远程字体，改用系统字体（国内访问更快更稳）
+  font: false
+  # 自定义 favicon（渐变「软」字图标）
+  favicon: assets/images/favicon.svg
+  # 自定义模板目录（首页精装落地页 + 全局样式）
+  custom_dir: overrides
+  icon:
+    logo: material/rocket-launch
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    # 首次访问默认使用深色主题，仍可手动切换并记住用户选择
+    - scheme: slate
+      primary: "#162A46"
+      accent: "#D8D0C1"
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色模式
+    - scheme: default
+      primary: "#162A46"
+      accent: "#D8D0C1"
+      toggle:
+        icon: material/weather-night
+        name: 切换到深色模式
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+hooks:
+  - hooks/homepage_toc.py
+
+# 全局自定义样式与脚本（文件放在 overrides/ 下，构建时复制到 site 根）
+extra_css:
+  - assets/stylesheets/custom.css
+extra_javascript:
+  - assets/javascripts/info-card.js
+  - assets/javascripts/pledge.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      # 保留中文标题作为锚点（否则纯中文标题会被回退成 _1、_2 等数字 id）
+      slugify: !!python/name:pymdownx.slugs.uslugify
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - 首页: index.md
+  - 初试准备:
+      - 初试报考指南: 初试准备/初试报考指南.md
+  - 复试准备:
+      - 复试考核指南: 复试准备/复试考核指南.md
+      - 推免生源统计: 复试准备/推免生源统计.md
+      - 北京大厂距软件所距离: 复试准备/北京大厂距中科院软件研究所距离.md
+      - 历年录取情况:
+          - 24 年录取情况: 复试准备/24年录取情况.md
+          - 25 年录取情况: 复试准备/25年录取情况.md
+          - 26 年录取情况: 复试准备/26年录取情况.md
+  - 毕业去向收集: 毕业去向/毕业去向收集.md
+  - 实验室去向收集: 毕业去向/实验室去向收集.md
+  - 上岸经验分享:
+      - 考研经验分享:
+          - 民办三本一战上岸国科大软件所: 上岸经验分享/民办三本一战上岸国科大软件所.md
+          - 双非一本一战上岸国科大软件所: 上岸经验分享/双非一本一战上岸国科大软件所.md
+          - 985 跨考国科大软件所学硕: 上岸经验分享/北理工跨考国科大软件所学硕.md
+          - 九本科班工作两年上岸国科大软件所: 上岸经验分享/九本科班工作两年上岸国科大软件所.md
+          - 双非科班一战上岸国科大软件所: 上岸经验分享/山师科班一战上岸国科大软件所.md
+          - 双非一战上岸国科大软件所（短篇）: 上岸经验分享/双非一战上岸国科大软件所（短篇）.md
+          - 985 一战高分上岸国科大软件所: 上岸经验分享/厦大一战高分上岸国科大软件所.md
+          - 四非 345 顺子分数一战上岸国科大软件所: 上岸经验分享/江汉大学345顺子分数一战上岸国科大软件所.md
+          - 985一战400+上岸国科大软件所（Dave）: 上岸经验分享/985一战400+上岸国科大软件所（Dave）.md
+          - 双非零基础一战上岸国科大软件所（TTao）: 上岸经验分享/双非零基础一战上岸国科大软件所（TTao）.md
+          - 四非一本一战上岸国科大软件所: 上岸经验分享/四非一本一战上岸国科大软件所.md
+          - 四非科班上岸国科大软件所: 上岸经验分享/四非科班上岸国科大软件所.md
+          - 985 三无摆子上岸国科大软件所: 上岸经验分享/九本三无摆子上岸国科大软件所.md
+          - 双非一本二战低分上岸国科大软件所: 上岸经验分享/双非一本二战低分上岸国科大软件所.md
+          - 双非二战上岸国科大软件所: 上岸经验分享/双非二战上岸国科大软件所.md
+      - 保研经验分享:
+          - 211 低 rk 保研上岸国科大软件所: 上岸经验分享/211低rk保研国科大软件所.md
+  - 投稿模板: 经验分享投稿模板.md
+  - 贡献者名单: CONTRIBUTORS.md
+  - 免责声明: 免责声明.md

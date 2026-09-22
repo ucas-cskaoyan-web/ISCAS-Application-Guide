@@ -50,7 +50,7 @@
 | 9 | 搜狐 | 搜狐网络大厦 | 1.60 |
 | 10 | 微软 | 微软亚太研发集团大厦 | 2.27 |
 
-![北京科技公司距软件所直线距离 Top 10 示意图](./overrides/assets/images/fig_location_advantage.webp)
+![北京科技公司距软件所直线距离 Top 10 示意图](./legacy/mkdocs-site/overrides/assets/images/fig_location_advantage.webp)
 
 > 📡 数据来源：高德地图 Web 服务 API（v5 地点搜索、地理编码），2026-08-14 实测；距离为两点间直线距离（Haversine 公式），仅供参考，非驾车/通勤距离。完整数据见 [北京科技公司距软件所直线距离](./复试准备/北京大厂距中科院软件研究所距离.md)。
 
@@ -123,13 +123,13 @@
 
 **近三年数据分析图**
 
-![近三年初试均分趋势](./overrides/assets/images/fig8_init_mean_trend.png)
+![近三年初试均分趋势](./legacy/mkdocs-site/overrides/assets/images/fig8_init_mean_trend.png)
 
-![初试分数区间录取率](./overrides/assets/images/fig6_bracket_rate.png)
+![初试分数区间录取率](./legacy/mkdocs-site/overrides/assets/images/fig6_bracket_rate.png)
 
-![各类型录取概率对比](./overrides/assets/images/fig11_bracket_by_type.png)
+![各类型录取概率对比](./legacy/mkdocs-site/overrides/assets/images/fig11_bracket_by_type.png)
 
-![专硕三年上岸率](./overrides/assets/images/fig13_zs_admit_rate.png)
+![专硕三年上岸率](./legacy/mkdocs-site/overrides/assets/images/fig13_zs_admit_rate.png)
 
 ---
 

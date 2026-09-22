@@ -1,0 +1,41 @@
+{
+    "name": "中科院软件所报考指南",
+    "copyright_year": 2026,
+    "assets": {
+        "directory": "_assets",
+        "articles": "articles"
+    },
+    "theme": {
+        "background": "_assets/site-wallpaper-v3.webp",
+        "background_focus": {
+            "rectangle": {
+                "x": 650,
+                "y": 0,
+                "width": 1022,
+                "height": 941
+            },
+            "overflow": "right"
+        }
+    },
+    "author": {
+        "name": "历届考生及热心网友",
+        "email": "1374146652@qq.com",
+        "github": "ucas-cskaoyan-web/ISCAS-Application-Guide"
+    },
+    "links": {
+        "legacy_site_url": "https://iscas-application-guide.pages.dev/"
+    },
+    "copyright": {
+        "holder": "历届考生及热心网友",
+        "notice": "公益维护，非盈利，与中国科学院软件研究所无隶属或官方关联 · 内容仅供参考，请以官方发布为准",
+        "license": "CC BY-NC-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans"
+    },
+    "home": {
+        "article_id": "home"
+    },
+    "articles": {
+        "maximum_number_per_page": 10,
+        "pagination_size": 3
+    }
+}

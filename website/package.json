@@ -1,0 +1,26 @@
+{
+  "name": "iscas-guide",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build:css": "node ./scripts/generate_material_theme.mjs && postcss ./styles/input.css -o ./target/styles.css",
+    "watch:css": "node ./scripts/generate_material_theme.mjs && postcss ./styles/input.css -o ./target/styles.css --watch"
+  },
+  "devDependencies": {
+    "@material/material-color-utilities": "0.3.0",
+    "@nexim/tailwind-material-colors": "github:bigsaltyfishes/nanolib#tailwindcss",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@tailwindcss/typography": "0.5.20",
+    "autoprefixer": "10.6.0",
+    "postcss": "^8.5.28",
+    "postcss-cli": "12.0.0",
+    "postcss-minify": "1.2.0",
+    "sharp": "0.34.3",
+    "tailwind-scrollbar": "^4.0.2",
+    "tailwindcss": "4.3.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
