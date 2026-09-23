@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Build the ISCAS guide for Cloudflare Pages.
 #
-# Required in the build image: node/npm, rustup/cargo, nu and zstd.
+# Required in the build image: node/npm, rustup/cargo and nu.
 # The custom Trunk revision is pinned so a future upstream change cannot
 # silently alter the generated site.
 
@@ -13,8 +13,6 @@ TOOLS_DIR="$SITE_ROOT/.ci-tools"
 TRUNK_REV="4758424b9c026b79cfe94fde1ef318df4f9c9216"
 NU_VERSION="0.115.1"
 NU_SHA256="d11d825241f6504a3617c535fa725a9dd6d009c86d7b19fb3168b47635b9d8b0"
-ZSTD_VERSION="1.5.7"
-ZSTD_SHA256="eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3"
 PUBLIC_URL="${PUBLIC_URL:-/}"
 
 # Keep downloaded helper binaries local to the site checkout. This also makes
@@ -63,27 +61,9 @@ if ! command -v nu >/dev/null 2>&1; then
   chmod +x "$TOOLS_DIR/bin/nu"
 fi
 
-if ! command -v zstd >/dev/null 2>&1; then
-  require_command curl
-  require_command make
-  require_command tar
-  require_command sha256sum
-  echo "安装 zstd $ZSTD_VERSION..."
-  ZSTD_ARCHIVE="$TOOLS_DIR/zstd-$ZSTD_VERSION.tar.gz"
-  curl -fL --retry 3 \
-    "https://github.com/facebook/zstd/releases/download/v$ZSTD_VERSION/zstd-$ZSTD_VERSION.tar.gz" \
-    -o "$ZSTD_ARCHIVE"
-  echo "$ZSTD_SHA256  $ZSTD_ARCHIVE" | sha256sum -c -
-  tar -xzf "$ZSTD_ARCHIVE" -C "$TOOLS_DIR"
-  make -C "$TOOLS_DIR/zstd-$ZSTD_VERSION" -j2 zstd-release
-  cp "$TOOLS_DIR/zstd-$ZSTD_VERSION/programs/zstd" "$TOOLS_DIR/bin/zstd"
-  chmod +x "$TOOLS_DIR/bin/zstd"
-fi
-
 require_command rustup
 require_command cargo
 require_command nu
-require_command zstd
 
 echo "安装前端依赖..."
 npm ci

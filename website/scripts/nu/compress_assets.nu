@@ -2,19 +2,6 @@
 # This script compiles the assets for the project.
 
 def main [assets_dir: string, output_dir: string] {
-    # Check if the required tools are installed
-    def check_command [cmd: string] {
-        try {
-            which $cmd | get path.0 | is-not-empty
-        } catch {
-            false
-        }
-    }
-
-    if not (check_command "zstd") {
-        error make {msg: "Zstd is not installed. Please install it to compile assets."}
-    }
-
     # Check if assets directory exists
     if not ($assets_dir | path exists) {
         error make {msg: $"Assets directory '($assets_dir)' does not exist."}
@@ -66,9 +53,7 @@ def main [assets_dir: string, output_dir: string] {
                     open $file.name | to json -r | save -f $output_path
                 }
                 "md" => {
-                    let zst_output = $output_path | str replace ".md" ".zst"
-                    print $"Compressing Markdown: ($file.name) -> ($zst_output)"
-                    ^zstd -q $file.name -o $zst_output
+                    cp $file.name $output_path
                 }
                 _ => {
                     # For other file types, just copy them

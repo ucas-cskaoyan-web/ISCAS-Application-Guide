@@ -18,9 +18,8 @@ Build output directory: dist
 构建脚本固定使用 `bigsaltyfishes/trunk` 的 `feat/gzip` 提交
 `4758424b9c026b79cfe94fde1ef318df4f9c9216`，并生成 `dist/` 静态产物。
 
-Cloudflare 构建环境必须提供 Node/npm、Rust/cargo、NuShell 和 zstd。若 Pages
-构建镜像缺少其中任意工具，构建会明确失败；此时应改用 GitHub Actions 构建后上传
-Cloudflare Pages，而不是使用未固定版本的工具继续构建。
+构建脚本会在 Cloudflare Linux 环境中自动准备 Rust/cargo 和固定版本的 NuShell；
+Node/npm 由 Pages 构建镜像提供。
 
 新版导航栏中的“旧版站点”地址来自 `assets/site.json` 的
 `links.legacy_site_url` 字段，旧站地址变化时只需修改该字段。

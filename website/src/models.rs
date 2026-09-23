@@ -37,19 +37,15 @@ impl Article {
     }
 
     pub async fn fetch(id: &str, site: &Site) -> Result<(Self, String), String> {
-        let url = site.article_asset_url(id, "index.zst").to_string();
+        let url = site.article_asset_url(id, "index.md").to_string();
         let response = gloo_net::http::Request::get(&url)
             .send()
             .await
             .map_err(|e| format!("Failed to fetch article: {}", e))?;
-        let markdown_zstd = response
-            .binary()
+        let markdown = response
+            .text()
             .await
-            .map_err(|e| format!("Failed to read binary data: {}", e))?;
-        let markdown_array = zstd::decode_all(markdown_zstd.as_slice())
-            .map_err(|e| format!("Failed to decompress: {}", e))?;
-        let markdown = String::from_utf8(markdown_array)
-            .map_err(|e| format!("Failed to decode UTF-8: {}", e))?;
+            .map_err(|e| format!("Failed to read article: {}", e))?;
         let metadata = Self::fetch_metadata(id, site).await?;
         Ok((metadata, markdown))
     }

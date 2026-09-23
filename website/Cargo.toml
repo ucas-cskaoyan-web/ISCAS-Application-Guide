@@ -42,7 +42,6 @@ katex-wasmbind = "0.10.0"
 log = "0.4.27"
 wasm-logger = "0.2.0"
 web-time = "1.1.0"
-zstd = { version = "0.13.3", features = ["wasm"] }
 console_error_panic_hook = "0.1.7"
 
 [profile.release]
