@@ -1,6 +1,6 @@
 [toolchain]
 channel = "nightly"
+profile = "minimal"
 targets = [
     "wasm32-unknown-unknown",
 ]
-components = ["clippy", "llvm-tools-preview", "miri", "rust-src", "rustfmt"]
