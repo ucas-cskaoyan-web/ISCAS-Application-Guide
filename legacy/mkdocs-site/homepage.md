@@ -385,7 +385,7 @@
       <a class="isc-avatar" href="https://github.com/GEJXD" title="Hsin" target="_blank" rel="noopener"><img src="https://github.com/GEJXD.png?size=100" alt="Hsin" loading="lazy"></a>
       <a class="isc-avatar" href="https://github.com/selfanti" title="tao WH" target="_blank" rel="noopener"><img src="https://github.com/selfanti.png?size=100" alt="tao WH" loading="lazy"></a>
       <a class="isc-avatar" href="https://github.com/biuki4" title="biuki4" target="_blank" rel="noopener"><img src="https://github.com/biuki4.png?size=100" alt="biuki4" loading="lazy"></a>
-      <a class="isc-avatar" href="https://github.com/shusoyo" title="Su Shuang" target="_blank" rel="noopener"><img src="https://github.com/shusoyo.png?size=100" alt="Su Shuang" loading="lazy"></a>
+      <a class="isc-avatar" href="https://github.com/hejsu" title="Su Shuang" target="_blank" rel="noopener"><img src="https://github.com/hejsu.png?size=100" alt="Su Shuang" loading="lazy"></a>
       <a class="isc-avatar" href="https://github.com/nowaylueluelue" title="pzy0623" target="_blank" rel="noopener"><img src="https://github.com/nowaylueluelue.png?size=100" alt="pzy0623" loading="lazy"></a>
       <a class="isc-avatar" href="https://github.com/Believemys" title="Believemys" target="_blank" rel="noopener"><img src="https://github.com/Believemys.png?size=100" alt="Believemys" loading="lazy"></a>
       <a class="isc-avatar" href="https://github.com/davepearl" title="davepearl" target="_blank" rel="noopener"><img src="https://github.com/davepearl.png?size=100" alt="davepearl" loading="lazy"></a>

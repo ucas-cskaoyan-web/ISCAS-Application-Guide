@@ -169,7 +169,7 @@ pub struct SiteLinks {
 }
 
 fn default_legacy_site_url() -> String {
-    "https://iscas-application-guide.pages.dev/".to_string()
+    "https://guide.iscas.win/".to_string()
 }
 
 #[derive(Debug, Clone, Deserialize, Serialize, PartialEq)]

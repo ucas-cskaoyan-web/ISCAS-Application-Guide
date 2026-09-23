@@ -12,7 +12,7 @@ Cloudflare Pages 连接本仓库后，配置：
 每次推送到生产分支后，Cloudflare 会重新构建并发布 `website/dist/`。
 
 新站 `assets/site.json` 中的 `links.legacy_site_url` 默认指向旧站：
-`https://iscas-application-guide.pages.dev/`。如果旧站改用自定义域名，只需修改该字段。
+`https://guide.iscas.win/`。如果旧站改用其他域名，只需修改该字段。
 
 ## 旧站（并行保留）
 
@@ -30,8 +30,8 @@ Cloudflare Pages 连接本仓库后，配置：
 bash legacy/mkdocs-site/build-site.sh
 ```
 
-旧站项目可以继续使用原来的 `iscas-application-guide.pages.dev` 地址；新站项目绑定主域名。
-旧站归档配置中的 `extra.new_site_url` 预留了从旧站返回新站的入口，待新站正式域名确定后填写。
+旧站项目绑定 `guide.iscas.win`，新站项目绑定 `iscas.cskaoyan.cn`。
+旧站归档配置中的 `extra.new_site_url` 用于从旧站返回新站。
 
 ## 本地旧站预览
 

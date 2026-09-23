@@ -10,13 +10,13 @@
 site_name: 中科院软件所（ISCAS）考研报考指南
 site_description: 中国科学院软件研究所考研报考指南、复试攻略与上岸经验分享
 # 部署在 Cloudflare Pages（免费，URL 为 项目名.pages.dev）
-site_url: https://iscas-application-guide.pages.dev/
+site_url: https://guide.iscas.win/
 repo_url: https://github.com/ucas-cskaoyan-web/ISCAS-Application-Guide
-copyright: 公益维护，非盈利，与软件所无关联 · 内容仅供参考，以官方为准 · <a href="https://iscas-application-guide.pages.dev/免责声明/">免责声明</a> · CC BY-NC-SA 4.0
+copyright: 公益维护，非盈利，与软件所无关联 · 内容仅供参考，以官方为准 · <a href="https://guide.iscas.win/免责声明/">免责声明</a> · CC BY-NC-SA 4.0
 
 # 部署新站后填写新版站点地址；为空时旧站不显示回链。
 extra:
-  new_site_url: ""
+  new_site_url: "https://iscas.cskaoyan.cn/"
 
 docs_dir: docs_src
 site_dir: site

@@ -84,6 +84,16 @@
     color: rgb(var(--ref-color-on-surface, var(--fallback-on-surface)));
   }
 
+  .nav-login-link {
+    color: rgb(var(--ref-color-on-primary-container, var(--fallback-on-primary-container)));
+    background: color-mix(in srgb, rgb(var(--ref-color-primary-container, var(--fallback-primary-container))) 76%, transparent);
+  }
+
+  .nav-login-link:hover {
+    color: rgb(var(--ref-color-on-primary-container, var(--fallback-on-primary-container)));
+    background: rgb(var(--ref-color-primary-container, var(--fallback-primary-container)));
+  }
+
   .nav-link .material-symbols-outlined,
   .icon-button .material-symbols-outlined {
     font-size: 19px;

@@ -138,6 +138,14 @@ pub fn Navbar() -> impl IntoView {
                         <span>{translator.translate("About")}</span>
                     </A>
                     <a
+                        class="nav-link nav-login-link"
+                        href="http://106.53.55.161/"
+                        title=translator.translate("Score entry")
+                    >
+                        <span class="material-symbols-outlined" aria-hidden="true">"edit_note"</span>
+                        <span>{translator.translate("Score entry")}</span>
+                    </a>
+                    <a
                         class="nav-link"
                         href=legacy_site_url.clone()
                         target="_blank"
@@ -226,6 +234,14 @@ pub fn Navbar() -> impl IntoView {
                             <span class="material-symbols-outlined" aria-hidden="true">"info"</span>
                             <span>{translator.translate("About")}</span>
                         </A>
+                        <a
+                            class="nav-link nav-login-link"
+                            href="http://106.53.55.161/"
+                            title=translator.translate("Score entry")
+                        >
+                            <span class="material-symbols-outlined" aria-hidden="true">"edit_note"</span>
+                            <span>{translator.translate("Score entry")}</span>
+                        </a>
                         <a
                             class="nav-link"
                             href=legacy_site_url.clone()

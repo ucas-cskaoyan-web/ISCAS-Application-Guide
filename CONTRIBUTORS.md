@@ -16,7 +16,7 @@
 
 @[Seegin](https://github.com/Seegin)
 
-@[Su Shuang](https://github.com/shusoyo)
+@[Su Shuang](https://github.com/hejsu)
 
 @[pzy0623](https://github.com/nowaylueluelue)
 

@@ -183,8 +183,8 @@
   <a href="https://github.com/biuki4">
     <img src="https://github.com/biuki4.png?size=100" width="70" height="70" alt="biuki4" style="border-radius:50%; margin: 0 8px;"/>
   </a>
-  <a href="https://github.com/shusoyo">
-    <img src="https://github.com/shusoyo.png?size=100" width="70" height="70" alt="Su Shuang" style="border-radius:50%; margin: 0 8px;"/>
+  <a href="https://github.com/hejsu">
+    <img src="https://github.com/hejsu.png?size=100" width="70" height="70" alt="Su Shuang" style="border-radius:50%; margin: 0 8px;"/>
   </a>
   <a href="https://github.com/nowaylueluelue">
     <img src="https://github.com/nowaylueluelue.png?size=100" width="70" height="70" alt="pzy0623" style="border-radius:50%; margin: 0 8px;"/>
